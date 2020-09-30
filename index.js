@@ -6,8 +6,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static("public"));
 
 const PORT = 3000;
+
+// TODO 정적파일 반환 편하게하기
 
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./public/index.html"));
