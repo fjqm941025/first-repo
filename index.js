@@ -17,7 +17,7 @@ app.options("/", (req, res) => {
     "POST, GET, OPTIONS, DELETE, PUT"
   );
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.setHeader("Access-Control-Allow-Origin", "http://3.134.106.234:3000/");
 
   res.send(200);
 });
@@ -27,7 +27,7 @@ app.post("/", (req, res) => {
 
   console.log(body);
 
-  response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.setHeader("Access-Control-Allow-Origin", "http://3.134.106.234:3000/");
 
   res.send("2post!");
 });
