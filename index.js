@@ -3,16 +3,16 @@ const path = require("path");
 const cors = require("cors");
 const app = express();
 
-app.use(express.json());
+app.use(express.json());//JSON을 사용하게 해 줌
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-app.use(express.static("public"));
+app.use(cors());//CORS 헤더를 알아서 사용해줌
+app.use(express.static("public"));//정적파일이 PUBLIC 폴더에 있음
 
 const PORT = 3000;
 
 // TODO 정적파일 반환 편하게하기
 
-app.get("/", (req, res) => {
+app.get("/echo", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./public/index.html"));
 });
 
@@ -25,5 +25,5 @@ app.post("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`listening on ${PORT}.....`);
+  console.log(`listening on ${PORT}.....`);//''사이에 ${}넣으면 변수도 출력할 수 잇음
 });
